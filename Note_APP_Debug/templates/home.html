@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Smart Notes</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fcfcfc;
+    }
+    
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f79292;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    
+    h1, h2 {
+        text-align: center;
+    }
+    
+    form label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    form input[type="text"],
+    form textarea {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        margin-bottom: 20px;
+    }
+    
+    form button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+    
+    form button:hover {
+        background-color: #f95909;
+    }
+    
+    ul {
+        margin-top: 20px;
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    ul li {
+        margin-bottom: 10px;
+    }
+    
+    ul li a {
+        color: #007bff;
+        text-decoration: none;
+    }
+</style>
+</head>
+<center>
+<body >
+	<div class="container">
+		<h1><img src="data:image/png;base64,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" alt="error loading image"></h1>
+        <h2>Welcome To Smart Notes Web App</h2>
+        <h3>Internship Project: II (Mritunjay Shawarn)</h3>
+		<body>
+            <form method="post">
+                <input type="text" name="note" placeholder="Enter a note">
+                <button>Add Note</button>
+            </form>
+        
+		<h4>Your Notes:</h4>
+		<ul>
+			{% for note in notes %}
+			<li>{{ note }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+</body>
+</html>
